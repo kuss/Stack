@@ -19,7 +19,8 @@
     "connect-flash": "latest",
 	  "passport": "latest",
 	  "passport-local": "latest",
-    "underscore": "latest"
+    "underscore": "latest",
+    "async": "latest"
   },
   "devDependencies": {
 	  "mocha": "latest",
