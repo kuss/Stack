@@ -8,6 +8,7 @@
  Look packages.json for details
 
 ## How to run
- npm install
- 
- npm start
+```sh
+ $ npm install
+ $ npm start
+```
