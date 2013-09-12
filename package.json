@@ -22,7 +22,7 @@
     "underscore": "latest",
     "async": "latest",
     "stylus": "latest",
-    "notifier": "latest"
+    "nodemailer": "latest"
   },
   "devDependencies": {
     "mocha": "latest",
