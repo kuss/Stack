@@ -4,8 +4,8 @@ var path = require('path')
   , notifier = {
       service: 'postmark',
       APN: false,
-      email: false, // true
-      actions: ['comment'],
+      email: true,
+      actions: ['kaistAuth'],
       tplPath: templatePath,
       key: 'POSTMARK_KEY',
       parseAppId: 'PARSE_APP_ID',

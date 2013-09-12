@@ -7,6 +7,7 @@ var mongoose = require('mongoose')
   , crypto = require('crypto')
   , _ = require('underscore')
   , authTypes = ['email', 'portal']
+  , Validation = require('../../lib/helper/validation.js')
 
 var kaistauth = require('../../lib/kaist-auth')
 
@@ -117,6 +118,10 @@ UserSchema.methods = {
 
   makeSalt: function () {
     return Math.round((new Date().valueOf() * Math.random())) + ''
+  },
+
+  makeAuthToken: function() {
+    return Math.random().toString(36).substring(22)
   },
 
   /**
