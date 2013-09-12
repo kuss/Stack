@@ -21,7 +21,8 @@
     "passport-local": "latest",
     "underscore": "latest",
     "async": "latest",
-    "stylus": "latest"
+    "stylus": "latest",
+    "notifier": "latest"
   },
   "devDependencies": {
     "mocha": "latest",

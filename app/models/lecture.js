@@ -17,14 +17,7 @@ var LectureSchema = new Schema({
   department: { type: Schema.ObjectId, ref: 'Department'},
   professor: { type: Schema.ObjectId, ref: 'Professor'},
   lecture_type: { type: String, default: '' },
-  file: [{
-    title: { type: String, default: '' },     // for showing
-    filename: { type: String, default: '' },  // real file name
-    author: { type: Schema.ObjectId, ref: 'User' },
-    createdAt: { type: Date, default: Date.now },
-    description: { type: String, default: '' },
-    point: { type: Schema.ObjectId, ref: 'Point' }
-  }],
+  file: [{ type: Schema.ObjectId, ref: 'File' }],
   keyword: { type: [], get: getKeywords, set: setKeywords },
   otl_path: { type: String, default: '' }
 })
