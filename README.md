@@ -15,3 +15,8 @@
  $ npm install
  $ npm start
 ```
+
+## How to load fixture data
+```sh
+ $ node app/models/fixtures/test
+```
