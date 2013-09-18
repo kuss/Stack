@@ -1,9 +1,11 @@
 var async = require('async')
 var home = require('../app/controllers/home')
 var user = require('../app/controllers/user')
+var lecture = require('../app/controllers/lecture')
+var auth = require('./middlewares/authhelper')
 
 module.exports = function(app, passport) {
-  app.get('/', home.index)
+  app.get('/', auth.requiresLogin, lecture.index)
 
   app.get('/signup', user.signup)
   app.post('/signup', user.create)

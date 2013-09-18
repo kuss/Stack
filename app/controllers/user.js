@@ -23,7 +23,6 @@ exports.create = function(req, res) {
     }
 
     user.set('authToken', user.makeAuthToken())
-    Notifier.kaistAuth(user.authToken)
   })
 }
 
@@ -50,5 +49,5 @@ exports.loginSucceed = function(req, res) {
     delete req.session.returnTo
     return
   }
-  res.redirect('/')
+  res.redirect('/main')
 }

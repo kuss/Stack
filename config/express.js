@@ -1,5 +1,6 @@
 var express = require('express')
   , mongoStore = require('connect-mongo')(express)
+  , flash = require('connect-flash')
   , pkg = require('../package.json')
 
 module.exports = function (app, config, passport) {
@@ -53,7 +54,7 @@ module.exports = function (app, config, passport) {
     app.use(passport.session())
 
     // connect flash for flash messages - should be declared after sessions
-    // app.use(flash())
+    app.use(flash())
 
     // should be declared after session and flash
     // app.use(helpers(pkg.name))
