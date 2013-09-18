@@ -1,17 +1,17 @@
 var id = require('pow-mongodb-fixtures').createObjectId
 
-var users = exports.users = [
-  { 
+var users = exports.users = {
+  test: { 
     "_id": id(), 
     "point": 0, 
     "kaistauth": false, 
     "authToken": "", 
-    "salt": "844498472375", 
-    "hashed_password": "7a04990ec68193b097bdfb1a3f9d2fecbf6eea73", 
+    "salt": "897305656015", 
+    "hashed_password": "f9b0d7668d4b18d706bcb3f2e03c10fcfa8c6536", 
     "provider": "local", 
-    "username": "kuss", 
-    "email": "ajmbell@bawi.org", 
-    "name": "Jaeman", 
+    "username": "test", 
+    "email": "test@stack.kaist.ac.kr", 
+    "name": "test", 
     "__v": 0 
   }
-]
+}
