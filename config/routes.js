@@ -1,7 +1,7 @@
-var async = require('async')
 var home = require('../app/controllers/home')
 var user = require('../app/controllers/user')
 var lecture = require('../app/controllers/lecture')
+var file = require('../app/controllers/file')
 var auth = require('./middlewares/authhelper')
 
 module.exports = function(app, passport) {
@@ -18,4 +18,9 @@ module.exports = function(app, passport) {
       failureRedirect: '/login',
       failureFlash: 'Invalid email or password'
     }), user.loginSucceed)
+
+  app.get('/lecture/:id', lecture.view);
+
+  app.get('/lecture/:id/upload', file.uploadform);
+  app.post('/lecture/:id/upload', file.upload);
 }
