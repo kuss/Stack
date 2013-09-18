@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "mocha": "latest",
-    "nodemon": "latest"
+    "nodemon": "latest",
+    "pow-mongodb-fixtures": "latest"
   }
 }

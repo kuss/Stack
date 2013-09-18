@@ -15,6 +15,7 @@ var path = require('path')
 module.exports = {
   development: {
     db: 'mongodb://localhost/stack_dev',
+    dbname: 'stack_dev',
     root: rootPath,
     notifier: notifier,
     app: {
@@ -23,6 +24,7 @@ module.exports = {
   },
   test: {
     db: 'mongodb://localhost/stack_test',
+    dbname: 'stack_test',
     root: rootPath,
     notifier: notifier,
     app: {
