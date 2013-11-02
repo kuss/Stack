@@ -1,7 +1,11 @@
 extends ../layout
 
 block content
-  div#navigator
-  div#page
-  div= departments
-  div= lectures 
+  div.row
+    div#navigator.span4
+      each lecture, key in lectures
+        each val in lecture
+          a(href='/lecture/#{val.old_code}')
+            p= val.name
+    div#page.span8
+      p= debug

@@ -21,15 +21,16 @@ exports.index = function(req, res) {
     var result = {};
 
     for (var i in lectures) {
-      if (result[lectures[i].department] === undefined) {
-        result[lectures[i].department] = [];
+      if (result[lectures[i].department.id] === undefined) {
+        result[lectures[i].department.id] = [];
       }
-      result[lectures[i].department].push(lectures[i]);
+      result[lectures[i].department.id].push(lectures[i]);
     }
 
     res.render('lecture/index', {
-      'departments': JSON.stringify(departments),
-      'lectures': JSON.stringify(result)
+      'departments': departments,
+      'lectures': result,
+	  'debug': JSON.stringify(result)
     });
   });
 };
