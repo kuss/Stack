@@ -24,4 +24,6 @@ module.exports = function(app, passport) {
 
   app.get('/lecture/:id/upload', file.uploadform);
   app.post('/lecture/:id/upload', file.upload);
+
+  app.get('/file/:id', file.download);
 }
