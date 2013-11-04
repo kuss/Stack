@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  each lecture in lectures
+    p= lecture.name
+    each file in files[lecture._id]
+      a(href='/file/download/#{lecture.old_code}/#{file._id}')
+        p= file.title

@@ -17,7 +17,6 @@ var LectureSchema = new Schema({
   semester: { type: Number, default: 0 },
   department: { type: Schema.ObjectId, ref: 'Department'},
   professor: { type: Schema.ObjectId, ref: 'Professor'},
-  file: [{ type: Schema.ObjectId, ref: 'File' }],
   keyword: { type: [], get: getKeywords, set: setKeywords },
   otl_path: { type: String, default: '' }
 })

@@ -4,8 +4,10 @@ block content
   div.row
     div#navigator.span4
       each lecture, key in lectures
+        p= departments[key].name
         each val in lecture
           a(href='/lecture/#{val.old_code}')
             p= val.name
     div#page.span8
-      p= debug
+      p= lecture_debug
+      p= department_debug
