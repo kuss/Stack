@@ -3,6 +3,7 @@
 ## Dependencies
  * Node.js >= 0.10.x
  * npm >= 1.2.x
+ * mongodb
  * Look packages.json for local dependencies.
  * You should install node, express, smog globally
 
@@ -17,6 +18,15 @@
 ```
 
 ## How to load fixture data
+ * Sample ID : test@stack.kaist.ac.kr / test
+
 ```sh
  $ node app/models/fixtures/test
+```
+
+## How to see database web
+ * Test database name is stack_dev
+
+```sh
+ $ smog
 ```
