@@ -1,6 +1,7 @@
 var mongoose = require('mongoose')
   , User = mongoose.model('User')
   , Notifier = require('../mailer/notifier')
+  , util = require('util')
 
 exports.signup = function(req, res) {
   res.render('user/signup', {
@@ -15,12 +16,14 @@ exports.create = function(req, res) {
   user.provider = 'local'
   user.save(function (err) {
     if (err) {
-      return res.render('users/signup', {
-        errors: utils.errors(err.errors),
+      return res.render('user/signup', {
+        errors: err.errors,
         user: user,
         title: 'Sign up'
       })
     }
+
+    return res.redirect('/')
 
     user.set('authToken', user.makeAuthToken())
   })
