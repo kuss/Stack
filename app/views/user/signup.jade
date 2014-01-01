@@ -3,25 +3,37 @@ extends ../layout
 block content
   form#signup(action="/signup", method="post")
     input(type='hidden', name='_csrf', value="#{csrf_token}")
-    .control-group
+    .control-group.row
+      - var err = errors && errors['name'];
       label.control-label(for='name') Full name
-      .controls
-        input#name(type='text', name="name", placeholder='Full name', value=user.name)
+      .controls.col-xs-4(class=err ? "has-error": undefined)
+        input.form-control.col-xs-4#name(type='text', name="name", placeholder='Full name', value=user.name)
+      if (err)
+        p.text-danger= err
 
-    .control-group
+    .control-group.row
+      - var err = errors && errors['email'];
       label.control-label(for='email') Email
-      .controls
-        input#email(type='text', name="email", placeholder='Email', value=user.email)
+      .controls.col-xs-4(class=err ? "has-error": undefined)
+        input.form-control#email(type='text', name="email", placeholder='Email', value=user.email)
+      if (err)
+        p.text-danger= err
 
-    .control-group
+    .control-group.row
+      - var err = errors && errors['username'];
       label.control-label(for='username') Username
-      .controls
-        input#username(type='text', name="username", placeholder='Username', value=user.username)
+      .controls.col-xs-4(class=err ? "has-error": undefined)
+        input.form-control#username(type='text', name="username", placeholder='Username', value=user.username)
+      if (err)
+        p.text-danger= err
 
-    .control-group
+    .control-group.row
+      - var err = errors && errors['hashed_password'];
       label.control-label(for='password') Password
-      .controls
-        input#password(type='password', name="password", placeholder='Password')
+      .controls.col-xs-4(class=err ? "has-error": undefined)
+        input.form-control#password(type='password', name="password", placeholder='Password')
+      if (err)
+        p.text-danger= err
 
     .form-actions
       button.btn.btn-primary(type='submit') Sign up
